@@ -1,0 +1,152 @@
+html, body {
+  height: 100%;
+  background-color: #232323;
+  color: #fff;
+  font-family: "Roboto", sans-serif
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+  overflow: hidden;
+  height: 70px;
+  margin-top: -70px;
+  background-color: #060606;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.header.detail-view {
+  margin-top: 0;
+  position: relative;
+}
+
+.header > div {
+  display: inline-block;
+  float: left;
+}
+.header .link {
+  display: inline-block;
+}
+.header .menu { padding: 20px; }
+.header .menu a {
+  background: url('../icons/browse-icon.png') no-repeat;
+  width: 35px;
+  height: 26px;
+}
+.header.detail-view .menu {
+  visibility: hidden;
+}
+
+.header .logo {
+  padding: 8px 15px 3px;
+  text-align: center;
+  flex-grow: 2;
+  -webkit-flex-grow: 2;
+}
+.header .logo a {
+  background: url('../icons/logo.png') no-repeat;
+  width: 200px;
+  height: 55px;
+}
+
+.header .action {
+  float: right;
+  padding: 12px;
+}
+.header .action a {
+  background: url('../icons/search-icon.png') no-repeat;
+  width: 41px;
+  height: 42px;
+}
+
+.header.detail-view .action {
+  float: right;
+  padding: 20px 19px 20px 18px;
+}
+.header.detail-view .action a {
+  background: url('../icons/close-icon.png') no-repeat;
+  width: 28px;
+  height: 28px;
+}
+
+.main-view {
+  padding: 10px;
+  margin-top: 70px;
+}
+.main-view.detail-view {
+  margin-top: 0;
+}
+.group {
+  overflow: hidden;
+}
+.group + .group {
+  margin-top: 20px;
+}
+.group h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.movie-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.movie-list li {
+  display: inline-block;
+  margin-right: 10px;
+  height: 214px;
+  position: relative;
+}
+.movie-list li img.dark {
+  opacity: .4;
+}
+
+.movie-thumb .play-overlay {
+  height: 214px;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.movie-detail {
+  overflow: hidden;
+}
+.movie-detail > div {
+  float: left;
+  display: inline-block;
+}
+.movie-thumb {
+  position: relative;
+}
+.movie-thumb .play-overlay {
+  background: url('../icons/play-button-overlay.png') no-repeat;
+  background-position: center;
+}
+.movie-desc {
+  padding: 2px 20px;
+  line-height: 20px;
+  max-width: 45%;
+}
+.movie-desc .head {
+  line-height: 26px;
+  font-size: 140%;
+}
+.movie-desc .head + div {
+  margin-top: 10px;
+  font-size: 90%;
+}
