@@ -7,6 +7,22 @@ Netflix.DBModel = (function () {
     // collapse this data (list & movies) in your code editor for convenience
     // In real time, this should be a one-time AJAX call-then-cache.
     // Couldn't get time to implement the same.
+    // singleton, closure
+    var modelInstance;
+    function createInstance () {
+        return {
+            fetchMovieList: function () {
+                return mockResponse.lists;
+            },
+            fetchMovie: function (id) {
+                return mockResponse.movies[id].summary;
+            }
+        }
+    }
+
+    /*
+     * Mock Response
+     */
     var mockResponse = {
     "lists": [
         {
@@ -3059,19 +3075,6 @@ Netflix.DBModel = (function () {
         }
     }
     };
-
-    // singleton, closure
-    var modelInstance;
-    function createInstance () {
-        return {
-            fetchMovieList: function () {
-                return mockResponse.lists;
-            },
-            fetchMovie: function (id) {
-                return mockResponse.movies[id].summary;
-            }
-        }
-    }
 
     return {
         getModel: function () {
